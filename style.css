@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  text-align: center;
+}
+.content_result {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  margin: 20px;
+}
+.card {
+  padding: 50px;
+}
