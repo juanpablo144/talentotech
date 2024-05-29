@@ -20,6 +20,13 @@
         localStorage.setItem("color", color);
         mostrarDatos();
       }
+      function guardarDatosSessionStorage() {
+        const nombreSession = document.getElementById("nombreSession").value;
+        const colorSession = document.getElementById("colorSession").value;
+        sessionStorage.setItem("nombre", nombreSession);
+        sessionStorage.setItem("color", colorSession);
+        mostrarDatosSessionStorage();
+      }
       // Función para mostrar los datos guardados
       function mostrarDatos() {
         const nombre = localStorage.getItem("nombre");
@@ -33,15 +40,33 @@
             "No hay datos guardados.";
         }
       }
+      function mostrarDatosSessionStorage() {
+        const nombre = sessionStorage.getItem("nombre");
+        const color = sessionStorage.getItem("color");
+        if (nombre && color) {
+          document.getElementById(
+            "resultadoSession"
+          ).innerHTML = `Nombre: ${nombre}<br>Color favorito: ${color}`;
+        } else {
+          document.getElementById("resultadoSession").innerHTML =
+            "No hay datos guardados.";
+        }
+      }
       // Funcion para eliminar almacenamiento
       function eliminarDatos() {
         localStorage.removeItem("nombre");
         localStorage.removeItem("color");
         mostrarDatos();
       }
+      function eliminarDatosSessionStorage() {
+        sessionStorage.removeItem("nombre");
+        sessionStorage.removeItem("color");
+        mostrarDatosSessionStorage();
+      }
       // Cargar datos al ingresar a la página
       window.onload = function () {
         mostrarDatos();
+        mostrarDatosSessionStorage();
       };
     </script>
   </head>
@@ -61,9 +86,31 @@
         list="colores"
       />
       <br />
+      <label for="nombreSession">Nombre SessionStorage:</label>
+      <input type="text" id="nombreSession" placeholder="tu nombre" required />
+      <br />
+      <label for="colorSession">Color favorito:</label>
+      <input
+        type="text"
+        id="colorSession"
+        placeholder="que color?"
+        required
+        list="colores"
+      />
+      <br />
       <button type="submit" class="btn btn-success">Guardar</button>
+      <button onclick="guardarDatosSessionStorage()" class="btn btn-success">
+        Guardar en Session Storage
+      </button>
       <button type="button" onclick="eliminarDatos()" class="btn btn-danger">
         Eliminar Datos
+      </button>
+      <button
+        type="button"
+        onclick="eliminarDatosSessionStorage()"
+        class="btn btn-danger"
+      >
+        Eliminar SessionStorage
       </button>
 
       <input type="search" id="ms" name="si" list="colores" />
@@ -77,6 +124,12 @@
       <div class="card" style="width: 50%">
         <h2>Datos Guardados:</h2>
         <div id="resultado"></div>
+      </div>
+    </div>
+    <div class="content_result">
+      <div class="card" style="width: 50%">
+        <h2>Datos Guardados Session Storage:</h2>
+        <div id="resultadoSession"></div>
       </div>
     </div>
 
