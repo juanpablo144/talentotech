@@ -33,6 +33,12 @@
             "No hay datos guardados.";
         }
       }
+      // Funcion para eliminar almacenamiento
+      function eliminarDatos() {
+        localStorage.removeItem("nombre");
+        localStorage.removeItem("color");
+        mostrarDatos();
+      }
       // Cargar datos al ingresar a la página
       window.onload = function () {
         mostrarDatos();
@@ -56,6 +62,9 @@
       />
       <br />
       <button type="submit" class="btn btn-success">Guardar</button>
+      <button type="button" onclick="eliminarDatos()" class="btn btn-danger">
+        Eliminar Datos
+      </button>
 
       <input type="search" id="ms" name="si" list="colores" />
       <datalist id="colores">
