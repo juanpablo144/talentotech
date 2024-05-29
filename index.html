@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>localStorage</title>
+    <script>
+      // Función para guardar datos en localStorage
+      function guardarDatos() {
+        const nombre = document.getElementById("nombre").value;
+        const color = document.getElementById("color").value;
+        localStorage.setItem("nombre", nombre);
+        localStorage.setItem("color", color);
+        mostrarDatos();
+      }
+      // Función para mostrar los datos guardados
+      function mostrarDatos() {
+        const nombre = localStorage.getItem("nombre");
+        const color = localStorage.getItem("color");
+        if (nombre && color) {
+          document.getElementById(
+            "resultado"
+          ).innerHTML = `Nombre: ${nombre}<br>Color favorito: ${color}`;
+        } else {
+          document.getElementById("resultado").innerHTML =
+            "No hay datos guardados.";
+        }
+      }
+      // Cargar datos al ingresar a la página
+      window.onload = function () {
+        mostrarDatos();
+      };
+    </script>
+  </head>
+  <body>
+    <h1>localStorage</h1>
+
+    <form onsubmit="guardarDatos(); return false;">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="tu nombre" required />
+      <br />
+      <label for="color">Color favorito:</label>
+      <input
+        type="text"
+        id="color"
+        placeholder="que color?"
+        required
+        list="colores"
+      />
+      <br />
+      <button type="submit">Guardar</button>
+
+      <input type="search" id="ms" name="si" list="colores" />
+      <datalist id="colores">
+        <option value="amarillo"></option>
+        <option value="azul"></option>
+        <option value="rojo"></option>
+      </datalist>
+    </form>
+
+    <h2>Datos Guardados:</h2>
+    <div id="resultado"></div>
+  </body>
+</html>
