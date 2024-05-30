@@ -85,7 +85,18 @@
         required
         list="colores"
       />
+      <button type="submit" class="btn btn-success m-2">Guardar Local Storage</button>
+      <button type="button" onclick="eliminarDatos()" class="btn btn-danger">
+        Eliminar Datos Local Storage
+      </button>
+      <div class="content_result">
+        <div class="card" style="width: 100%">
+          <h2>Datos Guardados:</h2>
+          <div id="resultado"></div>
+        </div>
+      </div>
       <br />
+      <h1 class="title">Session Storage</h1>
       <label for="nombreSession">Nombre SessionStorage:</label>
       <input type="text" id="nombreSession" placeholder="tu nombre" required />
       <br />
@@ -98,12 +109,8 @@
         list="colores"
       />
       <br />
-      <button type="submit" class="btn btn-success">Guardar</button>
-      <button onclick="guardarDatosSessionStorage()" class="btn btn-success">
+      <button onclick="guardarDatosSessionStorage()" class="btn btn-success m-2">
         Guardar en Session Storage
-      </button>
-      <button type="button" onclick="eliminarDatos()" class="btn btn-danger">
-        Eliminar Datos
       </button>
       <button
         type="button"
@@ -114,24 +121,21 @@
       </button>
 
       <input type="search" id="ms" name="si" list="colores" />
+
+      <div class="content_result">
+        <div class="card" style="width: 100%">
+          <h2>Datos Guardados Session Storage:</h2>
+          <div id="resultadoSession"></div>
+        </div>
+      </div>
       <datalist id="colores">
         <option value="amarillo"></option>
         <option value="azul"></option>
         <option value="rojo"></option>
       </datalist>
     </form>
-    <div class="content_result">
-      <div class="card" style="width: 50%">
-        <h2>Datos Guardados:</h2>
-        <div id="resultado"></div>
-      </div>
-    </div>
-    <div class="content_result">
-      <div class="card" style="width: 50%">
-        <h2>Datos Guardados Session Storage:</h2>
-        <div id="resultadoSession"></div>
-      </div>
-    </div>
+    
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
