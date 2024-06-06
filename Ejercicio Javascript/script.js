@@ -4,10 +4,17 @@ function persona(nom, eda, pro) {
   this.profesion = pro;
 }
 
-function ejVar() {}
+function ejVar() {
 
   var p1 = new persona("Laura", 33, "Inge");
-  var p2 = new persona("Francisco", 25, "Arquitecto")
+  var p2 = new persona("Francisco", 25, "Arquitecto");
+
+  console.log("p1:" + JSON.stringify(p1));
+  console.log("persona 2");
+
+  for (const x in p2) {
+    console.log(x + p2[x])
+  }
 
  /*  let persona = new Object();
   persona.nombre = "Sofia";
