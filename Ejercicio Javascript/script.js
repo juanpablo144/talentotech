@@ -1,4 +1,4 @@
-function persona(nom, eda, pro) {
+function per(nom, eda, pro) {
   this.nombre = nom;
   this.edad = eda;
   this.profesion = pro;
@@ -6,15 +6,17 @@ function persona(nom, eda, pro) {
 
 function ejVar() {
 
-  var p1 = new persona("Laura", 33, "Inge");
-  var p2 = new persona("Francisco", 25, "Arquitecto");
+  var p1 = new per("Laura", 33, "Inge");
+  var p2 = new per("Francisco", 25, "Arquitecto");
 
   console.log("p1:" + JSON.stringify(p1));
   console.log("persona 2");
 
   for (const x in p2) {
-    console.log(x + p2[x])
+    console.log(x + ": "+ p2[x])
   }
+
+  console.log("FIN")
 
  /*  let persona = new Object();
   persona.nombre = "Sofia";
