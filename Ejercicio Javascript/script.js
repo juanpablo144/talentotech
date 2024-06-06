@@ -17,4 +17,10 @@ function ejVar() {
   console.log("antes: " + JSON.stringify(persona))
   delete persona.profesion;
   console.log("despues: " + JSON.stringify(persona))
+
+  console.log("Ver todas las propiedades del objeto")
+
+  for (const c in persona) {
+   console.log(c + ":" + persona[c])
+  }
 }
