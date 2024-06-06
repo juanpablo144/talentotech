@@ -1,11 +1,13 @@
-function per(nom, eda, pro) {
+/* function per(nom, eda, pro) {
   this.nombre = nom;
   this.edad = eda;
   this.profesion = pro;
 }
-
+ */
 function ejVar() {
 
+  document.body.innerHTML = "Buenas noches";
+/* 
   var p1 = new per("Laura", 33, "Inge");
   var p2 = new per("Francisco", 25, "Arquitecto");
 
@@ -16,7 +18,7 @@ function ejVar() {
     console.log(x + ": "+ p2[x])
   }
 
-  console.log("FIN")
+  console.log("FIN") */
 
  /*  let persona = new Object();
   persona.nombre = "Sofia";
