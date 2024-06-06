@@ -1,0 +1,146 @@
+.rojo {
+  color: #d00000;
+  font-weight: bold;
+}
+
+p {
+  color: white;
+  background-color: gray;
+  font-size: 200%;
+}
+
+#estilo {
+  color: red;
+  background-color: yellow;
+}
+
+.miestilo {
+  background-color: pink;
+}
+
+/* definir estilo para la pagina */
+#estilo .primer em {
+  color: black;
+  background-color: red;
+}
+
+p.small {
+  font-size: small;
+}
+
+p.medium {
+  font-size: medium;
+}
+
+p.large {
+  font-size: large;
+}
+
+p.xlarge {
+  font-size: xlarge;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 3.5em;
+}
+
+p.normal {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+p.lighter {
+  font-weight: lighter;
+}
+
+p.bold {
+  font-weight: bold;
+}
+
+p.bolder {
+  font-weight: bolder;
+}
+
+/* estilos basicos para la pagina */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+/* contenedor de elementos flex */
+.container {
+  display: flex;
+  justify-content: space-around; /* Espacio alrededor de los elementos */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px; /* redondeo para las esquinas */
+  box-shadow: 0 0 20px rgba(125, 12, 125, 0.9);
+}
+
+/* Estilos para las cajas */
+.caja {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  flex: 1; /* Flex-grow, permite que las cajas crezcan para ocupar el espacio disponible */
+  margin: 10px; /* Espacio entre las cajas */
+}
+
+/* valores de flex-direction */
+.row {
+  flex-direction: row; /* default */
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+button {
+  background-color: gray;
+  transition: background-color 1.5s;
+}
+
+button:hover {
+  background-color: blue;
+  color: yellow;
+}
+
+@keyframes anima {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+.ani {
+  background-color: red;
+  animation: anima 4s infinite;
+}

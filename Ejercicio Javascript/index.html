@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="/login/auth" method="post">
+        <div class="caja">
+          <label class="rojo" for="usuario"> usuario: </label>
+          <input
+            type="text"
+            id="usuario"
+            name="usuario"
+            placeholder="aqui va info usuario"
+            required
+          /><br /><br />
+        </div>
+        <div class="caja">
+          <label for="correo"> correo: </label>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="rrrr@gmail.com"
+            required
+          /><br /><br />
+        </div>
+        <div class="caja">
+          <label for="contraseña"> Contraseña: </label>
+          <input
+            type="password"
+            id="contraseña"
+            name="contraseña"
+            required
+          /><br /><br />
+        </div>
+        <div class="caja ani">
+          <label for="msg"> Mensaje: </label>
+          <textarea id="msg" name="msg" cols="50" rows="4"></textarea
+          ><br /><br />
+        </div>
+        <div class="container column">
+          <div class="caja">
+            <label class="rojo" for="tipide">Identificacion</label><br />
+            <input type="radio" name="tipide" value="CC" /> Cedula de ciudadania
+            <br />
+            <input type="radio" name="tipide" value="CE" /> Cedula de
+            extranjeria <br />
+            <input type="radio" name="tipide" value="TI" /> Tarjeta de identidad
+            <br />
+            <input type="radio" name="tipide" value="NUIP" /> numero unico de
+            identifiacion <br />
+            <input type="radio" name="tipide" value="PA" /> Pasaaporte <br />
+          </div>
+          <div class="caja">
+            <label class="rojo" for="pasatiempos">pasatiempos</label><br />
+            <input type="checkbox" name="pasatiempos" value="T" /> Trotar <br />
+            <input type="checkbox" name="pasatiempos" value="C" /> Correr <br />
+            <input type="checkbox" name="pasatiempos" value="N" /> Nadar <br />
+            <input type="checkbox" name="pasatiempos" value="D" /> Dormir <br />
+            <input type="checkbox" name="pasatiempos" value="L" /> Leer <br />
+          </div>
+        </div>
+        <div class="caja">
+          <button type="submit">Enviar</button>
+          <button type="button" onClick="ejVar()">Validar</button>
+          <button type="reset">Limpiar</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
