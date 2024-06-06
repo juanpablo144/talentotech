@@ -6,7 +6,21 @@
  */
 function ejVar() {
 
-  document.body.innerHTML = "Buenas noches";
+  elemento = document.getElementsByTagName("p");
+  for (let i = 0; i < elemento.length; i++) {
+    console.log("x=" + i)
+    elemento[i].style.color = "black"
+    
+  }
+
+  /* elemento = document.getElementById("usuario")
+  elemento.value = "Hola campeon";
+
+  elementos = document.getElementsByClassName("rojo");
+  console.log(elementos) */
+
+/*   document.body.innerHTML = "Buenas noches";*/
+
 /* 
   var p1 = new per("Laura", 33, "Inge");
   var p2 = new per("Francisco", 25, "Arquitecto");
