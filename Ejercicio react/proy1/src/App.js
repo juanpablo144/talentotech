@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function App(props) {
   const [cont, setCont] = useState(3);
 
   const [info, setInfo] = useState([]);
+
+  const [element, setElem] = useState([]);
 
   let incCont = () => {
     setCont(cont + 1);
@@ -41,26 +43,42 @@ function App(props) {
   } ;
 
   function getDatos(){
+    console.log("hola")
     getData();
+  }
+
+  useEffect( () => {getDatos();}, [])
+
+  const pId = useRef();
+
+  function verInfo(){
+    for (const i of info) {
+      if(i.id == pId.current.value){
+        console.log("-------" + JSON.stringify(i))
+        setElem(i)
+      }
+    }
   }
 
   return (
     <div style={estilo}>
       <h1>Hola Clase - {cont}</h1>
       <h3>Hora: {cd.toLocaleTimeString()}</h3>
+      <input ref={pId} type="text" placeholder="Buscar por ID" />
+      <button onClick={verInfo}>Buscar</button>
       <button onClick={decCont}>Decrementar</button>
       <button onClick={incCont}>Incrementar</button>
       <button onClick={getDatos}>Consultar</button>
       <div>
         <ul>
           {info.map(
-            (d,i) => (
+            (data,i) => (
               <li key={i}>
-                <h3>{d.id}</h3>
-                <p>{d.postId}</p>
-                <p>{d.name}</p>
-                <p>{d.email}</p>
-                <p>{d.body}</p>
+                <h3>{data.id}</h3>
+                <p>{data.postId}</p>
+                <p>{data.name}</p>
+                <p>{data.email}</p>
+                <p>{data.body}</p>
               </li>
             )
           )}
