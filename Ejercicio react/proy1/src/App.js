@@ -3,6 +3,8 @@ import { useState } from "react";
 function App(props) {
   const [cont, setCont] = useState(3);
 
+  const [info, setInfo] = useState([]);
+
   let incCont = () => {
     setCont(cont + 1);
   };
@@ -31,8 +33,8 @@ function App(props) {
         throw new Error( "Er:" + rta.error ) ;
       }
       let datos = await rta.json() ;
-      console.log(JSON.stringify(datos))
-    //setInfo( datos ) ;
+      console.log(datos)
+      setInfo( datos ) ;
     } catch (error) {
       console.log( "ERROR:" + error ) ;
     }
@@ -49,7 +51,23 @@ function App(props) {
       <button onClick={decCont}>Decrementar</button>
       <button onClick={incCont}>Incrementar</button>
       <button onClick={getDatos}>Consultar</button>
+      <div>
+        <ul>
+          {info.map(
+            (d,i) => (
+              <li key={i}>
+                <h3>{d.id}</h3>
+                <p>{d.postId}</p>
+                <p>{d.name}</p>
+                <p>{d.email}</p>
+                <p>{d.body}</p>
+              </li>
+            )
+          )}
+        </ul>
+      </div>
     </div>
+    
   );
 }
 
