@@ -4,6 +4,7 @@ import "./HomeComponent.css";
 
 function HomeComponent() {
   const [info, setInfo] = useState([]);
+  const [infoEpisode, setInfoEpisode] = useState([]);
   const [showChild, setShowChild] = useState(false);
   async function getData() {
     try {
@@ -19,6 +20,7 @@ function HomeComponent() {
       }
       let datos = await rta.json();
       setInfo(datos.results);
+      console.log(datos)
     } catch (error) {
       console.log("ERROR:" + error);
     }
@@ -28,8 +30,9 @@ function HomeComponent() {
     getData();
   }
 
-  const Episodios = () => {
-    setShowChild(!showChild); // Cambia el estado entre verdadero y falso
+  const Episodios = (prop) => {
+    setInfoEpisode(prop);
+    setShowChild(!showChild); // Cambia el estado entre verdadero y falso}
   };
 
   useEffect(() => {
@@ -38,7 +41,6 @@ function HomeComponent() {
 
   return (
     <div className="homeComponent">
-      {showChild && <DataComponent data={info} />}
       <div className="Banner">
         <div className="Title">
           <h2>Personajes de Rick and Morty</h2>
@@ -64,7 +66,7 @@ function HomeComponent() {
                   <p>
                     {i.species} - {i.status}
                   </p>
-                  <button className="btnEpisodios" onClick={Episodios}>
+                  <button className="btnEpisodios" onClick={() => Episodios(i)}>
                     Episodios
                   </button>
                   <button className="btnOrigen">Origen</button>
@@ -72,7 +74,13 @@ function HomeComponent() {
               </div>
             </div>
           ))}
+          
         </div>
+        <div className="Data">
+            <div className="Data-episode">
+            {showChild && <DataComponent data={infoEpisode} />}
+              </div>
+          </div>
       </div>
     </div>
   );
