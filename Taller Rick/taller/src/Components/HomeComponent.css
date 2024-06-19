@@ -1,0 +1,57 @@
+.Banner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: #d2d2d2;
+}
+.Title h2 {
+  font-size: 40px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.Character {
+  display: flex;
+  max-width: 100%;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.Profile {
+  width: 50%;
+}
+.Content-profile {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.ImageProfile img {
+  border-radius: 10px;
+}
+.TextProfile {
+  padding: 10px;
+}
+.btnEpisodios {
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 0px;
+}
+.btnOrigen {
+  background: #aad0e7;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 0px;
+}
