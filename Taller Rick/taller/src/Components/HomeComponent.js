@@ -4,6 +4,7 @@ import "./HomeComponent.css";
 
 function HomeComponent() {
   const [info, setInfo] = useState([]);
+  const [infoEpisode, setInfoEpisode] = useState([]);
   const [showChild, setShowChild] = useState(false);
   async function getData() {
     try {
@@ -28,7 +29,7 @@ function HomeComponent() {
     getData();
   }
 
-  const Episodios = () => {
+  const Episodios = (props) => {
     setShowChild(!showChild); // Cambia el estado entre verdadero y falso
   };
 
@@ -38,7 +39,6 @@ function HomeComponent() {
 
   return (
     <div className="homeComponent">
-      {showChild && <DataComponent data={info} />}
       <div className="Banner">
         <div className="Title">
           <h2>Personajes de Rick and Morty</h2>
@@ -72,6 +72,11 @@ function HomeComponent() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="Data">
+          <div className="Data-episode">
+
+          </div>
         </div>
       </div>
     </div>
