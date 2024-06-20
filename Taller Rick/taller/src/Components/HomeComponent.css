@@ -11,15 +11,50 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
-.Character {
+.Content_Home {
   display: flex;
-  max-width: 100%;
-  flex-flow: row wrap;
   flex-wrap: wrap;
   align-content: center;
-  flex-direction: row;
   justify-content: center;
+}
+.Data-episode {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  align-content: center;
+  flex-direction: column;
   align-items: center;
+  height: 40vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  flex-wrap: nowrap;
+}
+.Data-Origin {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 40vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  flex-wrap: nowrap;
+}
+.Character {
+  display: flex;
+  width: 50%;
+  flex-flow: row wrap;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  flex-wrap: nowrap;
 }
 .Profile {
   width: 50%;
