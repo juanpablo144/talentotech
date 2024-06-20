@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DataEpisodeComponent } from "./DataEpisodeComponent";
-import {DataOriginComponent} from "./DataOriginComponent";
+import { DataOriginComponent } from "./DataOriginComponent";
 
 import "./HomeComponent.css";
 
@@ -8,10 +8,13 @@ function HomeComponent() {
   const [info, setInfo] = useState([]);
   const [infoEpisode, setInfoEpisode] = useState([]);
   const [infoOrigin, setInfoOrigin] = useState([]);
+
   const [showEpisode, setShowEpisode] = useState(false);
   const [showOrigin, setShowOrigin] = useState(false);
+
   async function getData() {
     try {
+      console.log("hola mundo")
       const rta = await fetch("https://rickandmortyapi.com/api/character", {
         method: "GET",
         headers: {
@@ -24,7 +27,6 @@ function HomeComponent() {
       }
       let datos = await rta.json();
       setInfo(datos.results);
-      console.log(datos)
     } catch (error) {
       console.log("ERROR:" + error);
     }
@@ -35,18 +37,18 @@ function HomeComponent() {
   }
 
   const Episodios = (props) => {
-    setInfoEpisode(props)
+    setInfoEpisode(props);
     setShowEpisode(!showEpisode); // Cambia el estado entre verdadero y falso
-    
   };
 
   const Origin = (props) => {
-    setInfoOrigin(props)
+    setInfoOrigin(props);
     setShowOrigin(!showOrigin); // Cambia el estado entre verdadero y falso
   };
 
   useEffect(() => {
-    getDatos();
+    console.log("hola")
+    getData();
   }, []);
 
   return (
@@ -79,19 +81,20 @@ function HomeComponent() {
                   <button className="btnEpisodios" onClick={() => Episodios(i)}>
                     Episodios
                   </button>
-                  <button className="btnOrigen" onClick={() => Origin(i)}>Origen</button>
+                  <button className="btnOrigen" onClick={() => Origin(i)}>
+                    Origen
+                  </button>
                 </div>
               </div>
             </div>
           ))}
-          
         </div>
         <div className="Data">
           <div className="Data-episode">
-          {showEpisode && <DataEpisodeComponent data={infoEpisode} />}
+            {showEpisode && <DataEpisodeComponent data={infoEpisode} />}
           </div>
           <div className="Data-Origin">
-          {showOrigin && <DataOriginComponent data={infoOrigin} />}
+            {showOrigin && <DataOriginComponent data={infoOrigin} />}
           </div>
         </div>
       </div>

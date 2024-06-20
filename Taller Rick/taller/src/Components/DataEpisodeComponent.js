@@ -1,20 +1,11 @@
-import React ,{ useEffect, useState } from "react";
-
 function DataEpisodeComponent(props) {
-  const [info, setInfo] = useState([]);
-
-  function getDatosEpisode(){
-    setInfo(props.data.episode)
-  }
-
-  useEffect(() => {
-    getDatosEpisode();
-  }, []);
+  let Dataepisode = props.data.episode;
+  console.log(props.data)
 
   return (
   <div className="Content-episodes">
     <div className="Episodes-list">
-      {info.map((i, index) => (
+      {Dataepisode.map((i, index) => (
         <p key={index}>{i}</p>
         ))}
     </div>

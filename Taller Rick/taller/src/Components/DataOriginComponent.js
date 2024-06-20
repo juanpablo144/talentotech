@@ -1,23 +1,13 @@
-import React, { useEffect, useState } from "react";
-
 function DataOriginComponent(props) {
-  const [info, setInfo] = useState([]);
 
-  function getDatosOrigin() {
-    setInfo(props.data.origin);
-    
-  }
-
-  useEffect(() => {
-    getDatosOrigin();
-  }, []);
+  let DataOrigin = props.data.origin;
 
   return (
     <div className="Content-Origin">
       <div className="Origin-list">
           <div>
-            <p>{info.name}</p>
-            <p>{info.url}</p>
+            <p>{DataOrigin.name}</p>
+            <p>{DataOrigin.url}</p>
           </div>
       </div>
     </div>
