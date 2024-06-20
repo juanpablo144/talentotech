@@ -10,8 +10,12 @@ const reducer = (state = estadoIni, action) => {
         case 'INCREMENTAR':
             return{...state, cont: state.cont+action.inc}
         case 'EPISODIO':
-            return{...state,}
+            return{...state, episodios: action.epis}
         default:
-            break;
+            return state;
     }
-}
+};
+
+const store = createStore(reducer);
+
+export default store;
