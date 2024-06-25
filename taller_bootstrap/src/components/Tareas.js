@@ -8,7 +8,8 @@ function Tareas() {
       <Menu />
       <Container>
         <Row>
-          <Col>1 of 1</Col>
+          <Col>Col 1 de 2 </Col>
+          <Col>Col 2 de 2 </Col>
         </Row>
       </Container>
       <h1>Hola clase</h1>
