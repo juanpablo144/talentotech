@@ -6,7 +6,7 @@ function Tareas() {
   return (
     <>
       <Menu />
-      <Container>
+      <Container fluid={true}>
         <Row>
           <Col>Col 1 de 2 </Col>
           <Col>Col 2 de 2 </Col>
