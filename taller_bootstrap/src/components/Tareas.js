@@ -6,6 +6,7 @@ function Tareas() {
     <>
       <Menu />
       <h1>Hola clase</h1>
+      <p className="text-danger">Este es un subtitulo</p>
     </>
   );
 }

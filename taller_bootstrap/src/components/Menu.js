@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function Menu() {
   return (
@@ -8,7 +9,7 @@ function Menu() {
         className={({ isActive }) => (isActive ? "activo" : null)}
         to="/"
       >
-        Home
+        <Button variant="primary">Home</Button>
       </NavLink>
     </nav>
   );
