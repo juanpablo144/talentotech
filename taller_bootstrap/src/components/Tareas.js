@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu } from "./Menu";
-import { Image, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./Tareas.css";
 
 function Tareas() {
@@ -8,26 +8,22 @@ function Tareas() {
     <>
       <Menu />
       <Container fluid={true}>
-        <Row className="justify-content-center">
-          <Col sm={2} className="celda">
-            Col 1 de 2{" "}
-          </Col>
-          <Col sm={2} className="celda">
-            Col 2 de 2{" "}
-          </Col>
-        </Row>
         <Row>
           <Col className="celda">Col 1 de 3 </Col>
-          <Col xs={6} className="celda">
-            Col 2 de 3{" "}
+          <Col xs={12} sm={8} md={6} lg={4} xl={3} className="celda">
+            Col 2 de 3
           </Col>
-          <Col className="celda">Col 3 de 3 </Col>
+          <Col className="celda d-none d-md-block">Col 3 de 3 </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col className="celda">Col 1 de 2 </Col>
+          <Col className="celda">Col 2 de 2 </Col>
         </Row>
         <Row>
           <Col className="celda">Col 1 de 4 </Col>
           <Col className="celda">Col 2 de 4 </Col>
           <Col lg={4} className="celda">
-            Col 3 de 4{" "}
+            Col 3 de 4
           </Col>
           <Col className="celda">Col 4 de 4 </Col>
         </Row>
