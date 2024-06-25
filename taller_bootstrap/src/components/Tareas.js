@@ -1,7 +1,11 @@
 import React from "react";
 
 function Tareas() {
-  return <div>Tareas</div>;
+  return (
+    <>
+      <h1>Hola clase</h1>
+    </>
+  );
 }
 
 export { Tareas };

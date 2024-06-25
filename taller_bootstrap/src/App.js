@@ -1,10 +1,10 @@
 import "./App.css";
-import { Button } from "react-bootstrap";
+import { Tareas } from "./components/Tareas";
 
 function App() {
   return (
     <>
-      <Button variant="primary">Primary</Button>{" "}
+      <Tareas />
     </>
   );
 }
