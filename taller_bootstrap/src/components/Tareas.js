@@ -7,7 +7,7 @@ function Tareas() {
   return (
     <>
       <Menu />
-      <Container fluid={false}>
+      <Container fluid={true}>
         <Row className="justify-content-center">
           <Col sm={2} className="celda">
             Col 1 de 2{" "}
@@ -32,15 +32,6 @@ function Tareas() {
           <Col className="celda">Col 4 de 4 </Col>
         </Row>
       </Container>
-      <h1>Hola clase</h1>
-      <p className="text-info">Este es un subtitulo</p>
-      <Image
-        src="/assets/images/install-react.jpg"
-        alt="react"
-        className="w-50"
-        roundedCircle
-        fluid
-      />
     </>
   );
 }
